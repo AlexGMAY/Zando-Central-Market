@@ -96,3 +96,80 @@ body {
     @apply flex justify-between items-center;
   }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+.animate-fade-in-delayed {
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+.animate-bounce-in {
+  animation: bounceIn 0.8s ease-out;
+}
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out 0.3s both;
+}
+.animate-slide-up-delayed {
+  animation: slideUp 0.6s ease-out 0.5s both;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+.animate-spin-slow-reverse {
+  animation: spinSlow 25s linear infinite reverse;
+}
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

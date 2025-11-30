@@ -203,10 +203,28 @@ export const UserNameSchema = z.object({
 export const WebPageInputSchema = z.object({
   title: z.string().min(3, 'Title must be at least 3 characters'),
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
-  content: z.string().min(1, 'Content is required'),
-  isPublished: z.boolean(),
+  content: z.string().optional(),
+  htmlContent: z.string().optional(),
+  cssContent: z.string().optional(),
+  jsContent: z.string().optional(),
+  isPublished: z.boolean().default(false),
 })
+
 
 export const WebPageUpdateSchema = WebPageInputSchema.extend({
   _id: z.string(),
+})
+
+// PASSWORD RESET SCHEMAS
+export const PasswordResetRequestSchema = z.object({
+  email: z.string().min(1, 'Email is required').email('Email is invalid'),
+})
+
+export const PasswordResetSchema = z.object({
+  token: z.string().min(1, 'Invalid reset token'),
+  password: z.string().min(8, 'Password must be at least 8 characters'),
+  confirmPassword: z.string(),
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
 })

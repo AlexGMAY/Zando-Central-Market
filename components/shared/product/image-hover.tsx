@@ -7,10 +7,12 @@ const ImageHover = ({
   src,
   hoverSrc,
   alt,
+  className,
 }: {
   src: string
   hoverSrc: string
   alt: string
+  className?: string
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   let hoverTimeout: any
