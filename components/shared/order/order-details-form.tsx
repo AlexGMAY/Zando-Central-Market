@@ -66,7 +66,7 @@ export default function OrderDetailsForm({
 
   // Create wrapper functions that return the expected type
   const handleMarkAsPaid = async () => {
-    const result = await updateOrderToPaid(orderId)
+    const result = await updateOrderToPaid(orderId.toString())
     if (result.success) {
       return { success: true as const, message: '' }
     } else {
@@ -75,7 +75,7 @@ export default function OrderDetailsForm({
   }
 
   const handleMarkAsDelivered = async () => {
-    const result = await deliverOrder(orderId)
+    const result = await deliverOrder(orderId.toString())
     if (result.success) {
       return { success: true as const, message: '' }
     } else {
