@@ -63,7 +63,7 @@ export const round2 = (num: number) =>
 export const generateId = () =>
   Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)).join('')
 
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const formatError = (error: any): string => {
   if (error.name === 'ZodError') {
     const fieldErrors = Object.keys(error.errors).map((field) => {
@@ -94,8 +94,8 @@ export function calculateFutureDate(days: number) {
   return currentDate
 }
 export function getMonthName(yearAndMonth: string) {
-  
-  const [monthNumber] = yearAndMonth.split('-')
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [year, monthNumber] = yearAndMonth.split('-')
   const date = new Date()
   date.setMonth(parseInt(monthNumber) - 1)
   return new Date().getMonth() === parseInt(monthNumber) - 1
