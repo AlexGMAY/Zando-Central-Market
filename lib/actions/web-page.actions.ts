@@ -30,7 +30,7 @@ export async function updateWebPage(data: z.infer<typeof WebPageUpdateSchema>) {
   try {
     const webPage = WebPageUpdateSchema.parse(data)
     await connectToDatabase()
-    await WebPage.findByIdAndUpdate(webPage._id, webPage)
+    await WebPage.findByIdAndUpdate(webPage._id.toString(), webPage)
     revalidatePath('/admin/web-pages')
     return {
       success: true,
@@ -64,7 +64,7 @@ export async function getAllWebPages() {
 }
 export async function getWebPageById(webPageId: string) {
   await connectToDatabase()
-  const webPage = await WebPage.findById(webPageId)
+  const webPage = await WebPage.findById(webPageId.toString())
   return JSON.parse(JSON.stringify(webPage)) as IWebPage
 }
 

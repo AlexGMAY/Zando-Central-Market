@@ -599,7 +599,7 @@ export async function resetPassword(prevState: FormState, formData: FormData) {
 
     // Update user password
     const updatedUser = await User.findByIdAndUpdate(
-      resetData.userId,
+      resetData.userId.toString(),
       { password: hashedPassword },
       { new: true }
     )

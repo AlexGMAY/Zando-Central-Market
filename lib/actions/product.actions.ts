@@ -31,7 +31,7 @@ export async function updateProduct(data: z.infer<typeof ProductUpdateSchema>) {
   try {
     const product = ProductUpdateSchema.parse(data)
     await connectToDatabase()
-    await Product.findByIdAndUpdate(product._id, product)
+    await Product.findByIdAndUpdate(product._id.toString(), product)
     revalidatePath('/admin/products')
     return {
       success: true,

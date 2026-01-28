@@ -26,7 +26,7 @@ export async function updateOrderToPaid(orderId: string) {
     order.paidAt = new Date()
     await order.save()
     if (!process.env.MONGODB_URI?.startsWith('mongodb://localhost'))
-      await updateProductStock(order._id)
+      await updateProductStock(order._id.toString())
     if (order.user.email) await sendPurchaseReceipt({ order })
     revalidatePath(`/account/orders/${orderId}`)
     return { success: true, message: 'Order paid successfully' }
