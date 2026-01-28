@@ -68,38 +68,37 @@ export default async function WebPageDetailsPage(props: {
             <div className='text-gray-700 dark:text-gray-300 leading-relaxed'>
               <ReactMarkdown
                 components={{
-                  h1: ({ node, ...props }) => (
+                  h1: (props) => (
                     <h1 className='text-3xl font-bold text-gray-900 dark:text-white mt-8 mb-4' {...props} />
                   ),
-                  h2: ({ node, ...props }) => (
+                  h2: (props) => (
                     <h2 className='text-2xl font-semibold text-gray-800 dark:text-gray-100 mt-6 mb-3' {...props} />
                   ),
-                  h3: ({ node, ...props }) => (
+                  h3: (props) => (
                     <h3 className='text-xl font-medium text-gray-700 dark:text-gray-200 mt-4 mb-2' {...props} />
                   ),
-                  p: ({ node, ...props }) => (
+                  p: (props) => (
                     <p className='mb-4 leading-7' {...props} />
                   ),
-                  ul: ({ node, ...props }) => (
+                  ul: (props) => (
                     <ul className='list-disc list-inside mb-4 space-y-2' {...props} />
                   ),
-                  ol: ({ node, ...props }) => (
+                  ol: (props) => (
                     <ol className='list-decimal list-inside mb-4 space-y-2' {...props} />
                   ),
-                  blockquote: ({ node, ...props }) => (
+                  blockquote: (props) => (
                     <blockquote 
                       className='border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4' 
                       {...props} 
                     />
                   ),
-                  code: ({ node, ...props }) =>
-                    (
-                      <code 
-                        className='block bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-sm font-mono my-4 overflow-x-auto' 
-                        {...props} 
-                      />
-                    ),
-                  a: ({ node, ...props }) => (
+                  code: (props) => (
+                    <code 
+                      className='block bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-sm font-mono my-4 overflow-x-auto' 
+                      {...props} 
+                    />
+                  ),
+                  a: (props) => (
                     <a 
                       className='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors' 
                       {...props} 

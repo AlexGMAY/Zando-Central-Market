@@ -105,7 +105,7 @@ export default async function Page() {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-2 h-8 bg-gradient-to-b from-red-500 to-red-600 rounded-full"></div>
                   <h2 className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                    Today's Deals
+                    Today&apos;s Deals
                   </h2>
                   <span className="ml-2 px-3 py-1 bg-red-500 text-white text-sm font-medium rounded-full animate-pulse">
                     Limited Time

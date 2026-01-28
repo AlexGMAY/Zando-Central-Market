@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Home, Search, AlertCircle, ArrowLeft, RefreshCw } from 'lucide-react'
 
+
 export default function NotFound() {
   const handleGoHome = () => {
     window.location.href = '/'
@@ -61,8 +62,8 @@ export default function NotFound() {
 
             {/* Description */}
             <p className='text-slate-600 dark:text-slate-300 mb-8 leading-relaxed'>
-              Oops! The page you're looking for seems to have wandered off into the digital void. 
-              Let's get you back on track.
+              Oops! The page you&apos;re looking for seems to have wandered off into the digital void. 
+              Let&apos;s get you back on track.
             </p>
 
             {/* Action Buttons */}
@@ -105,20 +106,7 @@ export default function NotFound() {
           <div className='absolute -bottom-16 -right-16 w-32 h-32 border-2 border-dashed border-red-200 dark:border-red-800 rounded-full opacity-50 animate-spin-slow' />
           
           <div className='absolute -top-12 -left-12 w-24 h-24 border-2 border-dashed border-blue-200 dark:border-blue-800 rounded-full opacity-50 animate-spin-slow-reverse' />
-        </div>
-
-        {/* Footer Note */}
-        <div className='text-center mt-6 animate-fade-in'>
-          <p className='text-sm text-slate-500 dark:text-slate-400'>
-            Need help?{' '}
-            <a 
-              href='/page/help' 
-              className='text-blue-600 dark:text-blue-400 hover:underline font-medium transition-colors'
-            >
-              Contact Support
-            </a>
-          </p>
-        </div>
+        </div>        
       </div>      
     </div>
   )

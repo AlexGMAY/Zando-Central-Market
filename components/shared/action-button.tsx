@@ -51,6 +51,21 @@ import { Button } from '@/components/ui/button'
 import { useToast } from '@/hooks/use-toast'
 import { cn } from '@/lib/utils'
 
+// Define the possible return types from the action
+interface SuccessResponse {
+  success: true;
+  message: string;
+  [key: string]: unknown; // Allow additional properties
+}
+
+interface ErrorResponse {
+  error: string;
+  success?: false;
+  [key: string]: unknown; // Allow additional properties
+}
+
+type ActionResponse = SuccessResponse | ErrorResponse | void;
+
 export default function ActionButton({
   caption,
   action,
@@ -60,7 +75,7 @@ export default function ActionButton({
   disabled = false,
 }: {
   caption: string
-  action: () => Promise<any> // More flexible return type
+  action: () => Promise<ActionResponse> // Use defined type instead of any
   className?: string
   variant?: 'default' | 'outline' | 'destructive'
   size?: 'default' | 'sm' | 'lg'
@@ -82,12 +97,15 @@ export default function ActionButton({
             const res = await action()
             // Handle different response formats
             if (res && typeof res === 'object') {
-              if ('success' in res && 'message' in res) {
+              // Type guard for SuccessResponse
+              if ('success' in res && res.success === true && 'message' in res) {
                 toast({
-                  variant: res.success ? 'default' : 'destructive',
+                  variant: 'default',
                   description: res.message,
                 })
-              } else if ('error' in res) {
+              } 
+              // Type guard for ErrorResponse
+              else if ('error' in res) {
                 toast({
                   variant: 'destructive',
                   description: res.error || 'An error occurred',
@@ -100,10 +118,12 @@ export default function ActionButton({
                 description: 'Action completed successfully',
               })
             }
-          } catch (error) {
+          } catch (err) {
+            // Use the error variable
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
             toast({
               variant: 'destructive',
-              description: 'An unexpected error occurred',
+              description: errorMessage,
             })
           }
         })
@@ -113,4 +133,3 @@ export default function ActionButton({
     </Button>
   )
 }
-

@@ -75,10 +75,14 @@ export default function AddToCart({
           </Button>
         ),
       })
-    } catch (error: any) {
+    } catch (error) {
+      // Use type-safe error handling
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Failed to add item to cart';
       toast({
         variant: 'destructive',
-        description: error.message,
+        description: errorMessage,
       })
     }
   }
@@ -87,10 +91,14 @@ export default function AddToCart({
     try {
       addItem(item, quantity)
       router.push(`/checkout`)
-    } catch (error: any) {
+    } catch (error) {
+      // Use type-safe error handling
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Failed to process buy now';
       toast({
         variant: 'destructive',
-        description: error.message,
+        description: errorMessage,
       })
     }
   }

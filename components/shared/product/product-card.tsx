@@ -7,7 +7,7 @@ import Rating from './rating'
 import { formatNumber, generateId, round2 } from '@/lib/utils'
 import ProductPrice from './product-price'
 import AddToCart from './add-to-cart'
-import { Heart, Eye, Zap, Star, TrendingUp, Shield, Truck } from 'lucide-react'
+import { Heart, Eye, Zap, Star, Shield, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const ProductCard = ({

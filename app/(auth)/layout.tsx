@@ -2,7 +2,7 @@ import { APP_COPYRIGHT, APP_NAME } from '@/lib/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { Shield, Lock, Globe, Mail, Phone } from 'lucide-react'
+import { Shield, Lock } from 'lucide-react'
 
 export default async function AuthLayout({
   children,

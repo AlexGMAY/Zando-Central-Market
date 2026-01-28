@@ -128,9 +128,7 @@ import {
   Clock, 
   User, 
   Shield,
-  ArrowRight,
-  Eye,
-  EyeOff
+  ArrowRight,  
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'

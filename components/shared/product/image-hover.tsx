@@ -6,8 +6,7 @@ import { useState } from 'react'
 const ImageHover = ({
   src,
   hoverSrc,
-  alt,
-  className,
+  alt  
 }: {
   src: string
   hoverSrc: string

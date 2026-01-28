@@ -13,8 +13,7 @@ import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
+  CardDescription, 
   CardTitle,
 } from '@/components/ui/card'
 import {
@@ -51,10 +50,9 @@ import {
 import { ReviewInputSchema } from '@/lib/validator'
 import RatingSummary from '@/components/shared/product/rating-summary'
 import { IProduct } from '@/lib/db/models/product.model'
-import { Separator } from '@/components/ui/separator'
 import { IReviewDetails } from '@/types'
 import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
+
 
 const reviewFormDefaultValues = {
   title: '',
@@ -81,9 +79,10 @@ export default function ReviewList({
       setReviews([...res.data])
       setTotalPages(res.totalPages)
     } catch (err) {
+      const message = err instanceof Error ? err.message : 'Error in fetching reviews'
       toast({
         variant: 'destructive',
-        description: 'Error in fetching reviews',
+        description: message,
       })
     }
   }
@@ -111,7 +110,7 @@ export default function ReviewList({
     if (inView) {
       loadReviews()
     }
-  }, [inView])
+  }, [inView, product._id])
 
   type CustomerReview = z.infer<typeof ReviewInputSchema>
   const form = useForm<CustomerReview>({
@@ -242,7 +241,7 @@ export default function ReviewList({
                                 <FormLabel className="text-sm font-semibold">Your Rating</FormLabel>
                                 <Select
                                   onValueChange={field.onChange}
-                                  value={field.value.toString()}
+                                  value={(field.value ?? 0).toString()}
                                 >
                                   <FormControl>
                                     <SelectTrigger className="border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">

@@ -117,7 +117,6 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { Button, buttonVariants } from '../ui/button'
-import { Separator } from '../ui/separator'
 import { ScrollArea } from '../ui/scroll-area'
 import Image from 'next/image'
 import {
@@ -130,7 +129,22 @@ import {
 import { TrashIcon, ShoppingCart, Truck, ChevronRight, X } from 'lucide-react'
 import ProductPrice from './product/product-price'
 import { FREE_SHIPPING_MIN_PRICE } from '@/lib/constants'
-import { Badge } from '../ui/badge'
+
+// Define the CartItem type based on your cart store
+interface CartItem {
+  clientId: string;
+  product: string;
+  _id?: string;
+  name: string;
+  slug: string;
+  category: string;
+  image: string;
+  price: number;
+  quantity: number;
+  countInStock: number;
+  size?: string;
+  color?: string;
+}
 
 interface CartSidebarProps {
   isOpen: boolean
@@ -144,7 +158,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
     removeItem,
   } = useCartStore()
 
-  const itemCount = items.reduce((total: number, item: any) => total + item.quantity, 0)
+  const itemCount = items.reduce((total: number, item: CartItem) => total + item.quantity, 0)
   const qualifiesForFreeShipping = itemsPrice > FREE_SHIPPING_MIN_PRICE
   const shippingProgress = Math.min((itemsPrice / FREE_SHIPPING_MIN_PRICE) * 100, 100)
 
@@ -264,7 +278,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
               </div>
             ) : (
               <div className="space-y-4">
-                {items.map((item: any) => (
+                {items.map((item: CartItem) => (
                   <div 
                     key={item.clientId} 
                     className="group bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700 transition-all duration-200 hover:shadow-md"

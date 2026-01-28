@@ -292,7 +292,7 @@ import ProductSortSelector from '@/components/shared/product/product-sort-select
 import { getFilterUrl, toSlug } from '@/lib/utils'
 import Rating from '@/components/shared/product/rating'
 import CollapsibleOnMobile from '@/components/shared/collapsible-on-mobile'
-import { Filter, X, Tag, DollarSign, Star, Grid3X3, List } from 'lucide-react'
+import { Filter, X, Tag, DollarSign, Star, Grid3X3 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Card, CardContent } from '@/components/ui/card'
@@ -433,7 +433,7 @@ export default async function SearchPage(props: {
                     <div className="flex flex-wrap gap-2">
                       {q !== 'all' && q !== '' && (
                         <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
-                          Search: "{q}"
+                          Search: &quot;{q}&quot;
                         </Badge>
                       )}
                       {category !== 'all' && category !== '' && (

@@ -11,8 +11,7 @@ import {
   DollarSign,
   CheckCircle2,
   XCircle,
-  Truck,
-  MoreHorizontal
+  Truck  
 } from 'lucide-react'
 
 import { auth } from '@/auth'

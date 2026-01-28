@@ -9,7 +9,7 @@ import {
 import { getFilterUrl } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import React from 'react'
-import { ArrowUpDown, ChevronDown, Check } from 'lucide-react'
+import { ArrowUpDown, Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export default function ProductSortSelector({

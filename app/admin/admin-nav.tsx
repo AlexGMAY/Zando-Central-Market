@@ -11,18 +11,19 @@ import {
   Settings,
   ChevronRight,
   Home,
-  BarChart3,
-  Shield
+  BarChart3  
 } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
+// Remove 'Shield' import since it's not used
+
 interface NavItem {
   title: string
   href: string
-  icon: React.ComponentType<any>
+  icon: React.ComponentType<{ className?: string }> // Fix: Replace 'any' with specific type
   badge?: string | number
   description?: string
   isActive?: (pathname: string, href: string) => boolean
@@ -34,42 +35,42 @@ const navItems: NavItem[] = [
     href: '/admin/overview',
     icon: LayoutDashboard,
     description: 'Dashboard and analytics',
-    isActive: (pathname, href) => pathname === '/admin/overview' || pathname === '/admin'
+    isActive: (pathname: string) => pathname === '/admin/overview' || pathname === '/admin' // Fix: Remove unused 'href' parameter
   },
   {
     title: 'Products',
     href: '/admin/products',
     icon: Package,    
     description: 'Manage inventory and listings',
-    isActive: (pathname, href) => pathname.includes('/admin/products')
+    isActive: (pathname: string) => pathname.includes('/admin/products') // Fix: Remove unused 'href' parameter
   },
   {
     title: 'Orders',
     href: '/admin/orders',
     icon: ShoppingCart,    
     description: 'Process and track orders',
-    isActive: (pathname, href) => pathname.includes('/admin/orders')
+    isActive: (pathname: string) => pathname.includes('/admin/orders') // Fix: Remove unused 'href' parameter
   },
   {
     title: 'Users',
     href: '/admin/users',
     icon: Users,    
     description: 'Customer and user management',
-    isActive: (pathname, href) => pathname.includes('/admin/users')
+    isActive: (pathname: string) => pathname.includes('/admin/users') // Fix: Remove unused 'href' parameter
   },
   {
     title: 'Content',
     href: '/admin/web-pages',
     icon: FileText,
     description: 'Manage website content',
-    isActive: (pathname, href) => pathname.includes('/admin/web-pages')
+    isActive: (pathname: string) => pathname.includes('/admin/web-pages') // Fix: Remove unused 'href' parameter
   },
   {
     title: 'Settings',
     href: '/admin/settings',
     icon: Settings,
     description: 'System configuration',
-    isActive: (pathname, href) => pathname.includes('/admin/settings')
+    isActive: (pathname: string) => pathname.includes('/admin/settings') // Fix: Remove unused 'href' parameter
   },
 ]
 

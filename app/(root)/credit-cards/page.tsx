@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { 
@@ -9,11 +8,8 @@ import {
   Zap, 
   CheckCircle2, 
   Lock, 
-  Globe,
-  Smartphone,
-  Award,
-  TrendingUp,
-  Users
+  Globe,  
+  Award,  
 } from 'lucide-react'
 
 export const metadata: Metadata = {

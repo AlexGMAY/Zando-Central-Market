@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes'
 import React from 'react'
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip, Legend } from 'recharts'
 import { PieChart as PieChartIcon } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 
 interface PieChartData {
   _id: string
@@ -27,7 +27,7 @@ const COLORS = [
   '#8b5cf6', '#ec4899', '#06b6d4', '#84cc16'
 ];
 
-const CustomTooltip = ({ active, payload }: any) => {
+const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: any[] }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
@@ -133,7 +133,7 @@ export default function SalesCategoryPieChart({ data }: { data: PieChartData[] }
             layout="vertical"
             verticalAlign="middle"
             align="right"
-            formatter={(value, entry: any) => (
+            formatter={(value) => (
               <span className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
                 {value}
               </span>

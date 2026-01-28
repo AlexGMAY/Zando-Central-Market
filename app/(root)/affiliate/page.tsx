@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -9,12 +8,10 @@ import {
   DollarSign, 
   Shield, 
   Zap, 
-  BarChart3,
-  Rocket,
+  BarChart3,  
   CheckCircle2,
   Star,
-  Award,
-  Calendar,
+  Award, 
   Gift,
   Target
 } from 'lucide-react'
@@ -305,7 +302,7 @@ export default function BecomeAnAffiliate() {
                     </div>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 italic">
-                    "{story.testimonial}"
+                    &quot;{story.testimonial}&quot;
                   </p>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-600">
                     <span className="text-sm text-gray-500 dark:text-gray-400">Monthly Earnings</span>

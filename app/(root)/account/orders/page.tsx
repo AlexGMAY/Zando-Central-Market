@@ -308,7 +308,7 @@ const OrdersPage = async (props: {
                 <h3 className="font-semibold text-purple-900 dark:text-purple-300">Payment Issues?</h3>
               </div>
               <p className="text-purple-800 dark:text-purple-400 text-sm mb-4">
-                Having trouble with payment? We're here to help 24/7.
+                Having trouble with payment? We&apos;re here to help 24/7.
               </p>
               <Link href="/support">
                 <Button variant="outline" size="sm" className="w-full border-purple-200 text-purple-700 hover:bg-purple-100 dark:border-purple-800 dark:text-purple-300 dark:hover:bg-purple-900/20">

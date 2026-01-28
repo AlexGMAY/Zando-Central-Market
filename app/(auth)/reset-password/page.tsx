@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation'
 import { auth } from '@/auth'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { APP_NAME } from '@/lib/constants'
 import ResetPasswordForm from './ResetPasswordForm'
 
 export const metadata: Metadata = {

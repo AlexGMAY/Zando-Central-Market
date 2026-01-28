@@ -8,8 +8,7 @@ import {
   Eye,
   Globe,
   CheckCircle2,
-  XCircle,
-  MoreHorizontal
+  XCircle 
 } from 'lucide-react'
 
 import DeleteDialog from '@/components/shared/delete-dialog'

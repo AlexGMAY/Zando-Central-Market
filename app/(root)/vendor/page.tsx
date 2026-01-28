@@ -1,11 +1,9 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { 
-  Building, 
-  Truck, 
+  Building,    
   Shield, 
   TrendingUp, 
   Users, 
@@ -16,8 +14,7 @@ import {
   Package,
   Globe,
   HeadphonesIcon,
-  Zap,
-  CreditCard
+  Zap,  
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -400,7 +397,7 @@ export default function BecomeAVendor() {
                   </div>
                   
                   <p className="text-gray-600 dark:text-gray-400 mb-4 italic text-sm">
-                    "{story.testimonial}"
+                    &quot;{story.testimonial}&quot;
                   </p>
 
                   <div>

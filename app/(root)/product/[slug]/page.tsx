@@ -17,7 +17,7 @@ import RatingSummary from '@/components/shared/product/rating-summary'
 import ReviewList from './review-list'
 import { auth } from '@/auth'
 import { Badge } from '@/components/ui/badge'
-import { Truck, Shield, RotateCcw, Star, Zap, CheckCircle } from 'lucide-react'
+import { Truck, Shield, RotateCcw, Zap, CheckCircle } from 'lucide-react'
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>

@@ -23,6 +23,11 @@ export const metadata = {
   title: 'Order Details | Admin Dashboard',
 }
 
+interface Order {
+  isDelivered: boolean;
+  isPaid: boolean;  
+}
+
 const AdminOrderDetailsPage = async (props: {
   params: Promise<{
     id: string
@@ -36,13 +41,13 @@ const AdminOrderDetailsPage = async (props: {
 
   const session = await auth()
 
-  const getOrderStatusColor = (order: any) => {
+  const getOrderStatusColor = (order: Order) => {
     if (order.isDelivered) return 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/20 dark:text-green-300'
     if (order.isPaid) return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300'
     return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/20 dark:text-yellow-300'
   }
 
-  const getOrderStatusText = (order: any) => {
+  const getOrderStatusText = (order: Order) => {
     if (order.isDelivered) return 'Delivered'
     if (order.isPaid) return 'Processing'
     return 'Pending Payment'

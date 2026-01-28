@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
-import { ChevronRight, ArrowUpRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 type CardItem = {
   title: string

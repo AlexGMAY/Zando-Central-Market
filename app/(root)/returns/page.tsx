@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -10,8 +9,7 @@ import {
   CheckCircle2, 
   Truck,
   DollarSign,
-  Users,
-  Award,
+  Users,  
   Package,
   HeadphonesIcon
 } from 'lucide-react'

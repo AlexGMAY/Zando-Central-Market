@@ -119,7 +119,7 @@ export default function Footer() {
           </div>
 
           {/* Footer Sections */}
-          {footerSections.map((section, index) => (
+          {footerSections.map((section) => (
             <div key={section.title} className="space-y-4">
               <h3 className="font-semibold text-white text-lg">{section.title}</h3>
               <ul className="space-y-3">

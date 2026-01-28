@@ -2,7 +2,7 @@
 import BrowsingHistoryList from '@/components/shared/browsing-history-list'
 import ProductPrice from '@/components/shared/product/product-price'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Select,
   SelectContent,
@@ -48,7 +48,7 @@ export default function CartPage() {
               </h1>
               
               <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-md mx-auto">
-                Looks like you haven't added any items to your cart yet. Start shopping to discover amazing products!
+                Looks like you haven&apos;t added any items to your cart yet. Start shopping to discover amazing products!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -119,7 +119,7 @@ const UserEditForm = ({ user }: { user: IUser }) => {
                         />
                       </FormControl>
                       <FormDescription>
-                        User's full legal name as it should appear in the system
+                        User&apos;s full legal name as it should appear in the system
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -173,7 +173,7 @@ const UserEditForm = ({ user }: { user: IUser }) => {
                     </FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                      value={field.value.toString()}
+                      value={field.value?.toString() || ''}
                     >
                       <FormControl>
                         <SelectTrigger className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700">

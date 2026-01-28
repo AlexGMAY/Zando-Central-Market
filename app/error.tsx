@@ -1,6 +1,5 @@
 'use client'
 import { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Home, Search, AlertCircle, ArrowLeft, RefreshCw, AlertTriangle } from 'lucide-react'
 
@@ -10,8 +9,7 @@ export default function Error({
 }: {
   error: Error & { digest?: string }
   reset: () => void
-}) {
-  const pathname = usePathname()
+}) {  
 
   useEffect(() => {
     console.error('Application error:', error)
@@ -68,8 +66,8 @@ export default function Error({
 
               {/* Description */}
               <p className='text-slate-600 dark:text-slate-300 mb-8 leading-relaxed'>
-                The web page you're looking for doesn't exist or has been moved. 
-                Let's find you a better place to go.
+                The web page you&apos;re looking for doesn&apos;t exist or has been moved. 
+                Let&apos;s find you a better place to go.
               </p>
 
               {/* Action Buttons */}

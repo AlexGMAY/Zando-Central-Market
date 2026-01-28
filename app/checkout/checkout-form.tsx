@@ -718,7 +718,7 @@
 
 'use client'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import {
   Form,
   FormControl,
@@ -762,11 +762,9 @@ import {
 } from '@/lib/constants'
 import { createOrder } from '@/lib/actions/order.actions'
 import { toast } from '@/hooks/use-toast'
-import { 
-  ArrowRight, 
+import {   
   Shield, 
-  Lock, 
-  Truck, 
+  Lock,  
   CreditCard, 
   MapPin, 
   Package,
@@ -883,7 +881,7 @@ const CheckoutForm = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        description: "An unexpected error occurred. Please try again." + error,
         variant: 'destructive',
       })
     } finally {

@@ -45,6 +45,13 @@ type ProductListDataProps = {
   from: number
 }
 
+// Extend the Window interface to include our custom property
+declare global {
+  interface Window {
+    debounce?: NodeJS.Timeout;
+  }
+}
+
 const ProductList = () => {
   const [page, setPage] = useState<number>(1)
   const [inputValue, setInputValue] = useState<string>('')
@@ -66,22 +73,25 @@ const ProductList = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setInputValue(value)
-    if (value) {
-      clearTimeout((window as any).debounce)
-      ;(window as any).debounce = setTimeout(() => {
-        startTransition(async () => {
-          const data = await getAllProductsForAdmin({ query: value, page: 1 })
-          setData(data)
-          setPage(1)
-        })
-      }, 500)
-    } else {
-      startTransition(async () => {
-        const data = await getAllProductsForAdmin({ query: '', page: 1 })
-        setData(data)
-        setPage(1)
-      })
+    
+    // Clear existing timeout
+    if (window.debounce) {
+      clearTimeout(window.debounce)
     }
+    
+    // Set new timeout
+    window.debounce = setTimeout(() => {
+      startTransition(async () => {
+        const data = await getAllProductsForAdmin({ 
+          query: value, 
+          page: value ? 1 : page 
+        })
+        setData(data)
+        if (value) {
+          setPage(1)
+        }
+      })
+    }, 500)
   }
 
   useEffect(() => {
@@ -89,6 +99,13 @@ const ProductList = () => {
       const data = await getAllProductsForAdmin({ query: '' })
       setData(data)
     })
+    
+    // Cleanup function to clear timeout on unmount
+    return () => {
+      if (window.debounce) {
+        clearTimeout(window.debounce)
+      }
+    }
   }, [])
 
   const getStockVariant = (stock: number) => {
@@ -103,6 +120,7 @@ const ProductList = () => {
     return 'text-red-600 dark:text-red-400'
   }
 
+  // Rest of the component remains the same...
   return (
     <div className="space-y-6">
       {/* Header Section */}

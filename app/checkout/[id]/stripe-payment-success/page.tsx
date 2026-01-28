@@ -1,52 +1,3 @@
-// import Link from 'next/link'
-// import { notFound, redirect } from 'next/navigation'
-// import Stripe from 'stripe'
-
-// import { Button } from '@/components/ui/button'
-// import { getOrderById } from '@/lib/actions/order.actions'
-
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
-
-// export default async function SuccessPage(props: {
-//   params: Promise<{
-//     id: string
-//   }>
-//   searchParams: Promise<{ payment_intent: string }>
-// }) {
-//   const params = await props.params
-
-//   const { id } = params
-
-//   const searchParams = await props.searchParams
-//   const order = await getOrderById(id)
-//   if (!order) notFound()
-
-//   const paymentIntent = await stripe.paymentIntents.retrieve(
-//     searchParams.payment_intent
-//   )
-//   if (
-//     paymentIntent.metadata.orderId == null ||
-//     paymentIntent.metadata.orderId !== order._id.toString()
-//   )
-//     return notFound()
-
-//   const isSuccess = paymentIntent.status === 'succeeded'
-//   if (!isSuccess) return redirect(`/checkout/${id}`)
-//   return (
-//     <div className='max-w-4xl w-full mx-auto space-y-8'>
-//       <div className='flex flex-col gap-6 items-center '>
-//         <h1 className='font-bold text-2xl lg:text-3xl'>
-//           Thanks for your purchase
-//         </h1>
-//         <div>We are now processing your order.</div>
-//         <Button asChild>
-//           <Link href={`/account/orders/${id}`}>View order</Link>
-//         </Button>
-//       </div>
-//     </div>
-//   )
-// }
-
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
 import Stripe from 'stripe'
@@ -115,7 +66,7 @@ export default async function SuccessPage(props: {
             Payment Successful!
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Thank you for your purchase. Your order is now being processed and you'll receive a confirmation email shortly.
+            Thank you for your purchase. Your order is now being processed and you&apos;ll receive a confirmation email shortly.
           </p>
         </div>
 
@@ -243,7 +194,7 @@ export default async function SuccessPage(props: {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-green-900 dark:text-green-300 mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-green-600" />
-                  What's Next?
+                  What&apos;s Next?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -264,7 +215,7 @@ export default async function SuccessPage(props: {
                         Order Processing
                       </p>
                       <p className="text-green-700 dark:text-green-400 text-xs">
-                        We're preparing your items for shipment
+                        We&apos;re preparing your items for shipment
                       </p>
                     </div>
                   </div>

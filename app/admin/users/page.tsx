@@ -7,8 +7,7 @@ import {
   Mail, 
   Shield, 
   User,
-  Edit3,
-  MoreHorizontal,
+  Edit3,  
   UserPlus
 } from 'lucide-react'
 

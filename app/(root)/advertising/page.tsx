@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -11,8 +10,7 @@ import {
   Zap, 
   Shield,
   TrendingUp,
-  CheckCircle2,
-  Star,
+  CheckCircle2, 
   Award,
   Eye,
   MousePointer,

@@ -40,7 +40,6 @@ import {
   Image as ImageIcon
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
 
 const productDefaultValues: IProductInput =
   process.env.NODE_ENV === 'development'

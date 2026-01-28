@@ -30,11 +30,10 @@ import {
   XCircle,
   Clock,
   Download,
-  Printer,
-  Share2,
+  Printer,  
   ArrowRight
 } from 'lucide-react'
-import { toast } from '@/hooks/use-toast'
+
 // Add these imports at the top
 // import { downloadInvoice, generateInvoice } from '@/lib/actions/invoice.actions'
 
@@ -45,7 +44,7 @@ export default function OrderDetailsForm({
   order: IOrder
   isAdmin: boolean
 }) {
-  const [isProcessing, setIsProcessing] = useState(false)
+  const [isProcessing] = useState(false)
   // Then in your component function, add state:
   // const [isGeneratingInvoice, setIsGeneratingInvoice] = useState(false)
   
@@ -68,12 +67,20 @@ export default function OrderDetailsForm({
   // Create wrapper functions that return the expected type
   const handleMarkAsPaid = async () => {
     const result = await updateOrderToPaid(orderId)
-    return result
+    if (result.success) {
+      return { success: true as const, message: '' }
+    } else {
+      return { success: false as const, error: result.message }
+    }
   }
 
   const handleMarkAsDelivered = async () => {
     const result = await deliverOrder(orderId)
-    return result
+    if (result.success) {
+      return { success: true as const, message: '' }
+    } else {
+      return { success: false as const, error: result.message }
+    }
   }
 
   // Add these handler functions:

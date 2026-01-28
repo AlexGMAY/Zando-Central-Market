@@ -1,19 +1,15 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { 
   Building, 
-  Shield, 
-  Clock, 
+  Shield,    
   CheckCircle2, 
   Coins,
-  Globe,
-  Users,
+  Globe, 
   Award,
-  TrendingUp,
-  FileText
+  TrendingUp,  
 } from 'lucide-react'
 
 export const metadata: Metadata = {
