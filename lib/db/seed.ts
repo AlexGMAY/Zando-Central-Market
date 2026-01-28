@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import data from '@/lib/data'
 import { connectToDatabase } from '.'
 import Product from './models/product.model'
@@ -146,7 +146,7 @@ const generateOrder = async (
     user: users[i % users.length],
     items: items.map((item) => ({
       ...item,
-      product: item.product,
+      product: item.product.toString(),
     })),
     shippingAddress: data.users[i % users.length].address,
     paymentMethod: data.users[i % users.length].paymentMethod,
@@ -157,7 +157,10 @@ const generateOrder = async (
     createdAt: calculatePastDate(i),
     expectedDeliveryDate: calculateFutureDate(i % 2),
     ...calcDeliveryDateAndPriceForSeed({
-      items: items,
+      items: items.map((item) => ({
+        ...item,
+        product: item.product.toString(),
+      })),
       shippingAddress: data.users[i % users.length].address,
       deliveryDateIndex: i % 2,
     }),

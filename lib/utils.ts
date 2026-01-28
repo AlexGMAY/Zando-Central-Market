@@ -33,8 +33,7 @@ export const formatNumberWithDecimal = (num: number): string => {
   const [int, decimal] = num.toString().split('.')
   return decimal ? `${int}.${decimal.padEnd(2, '0')}` : int
 }
-// PROMPT: [ChatGTP] create toSlug ts arrow function that convert text to lowercase, remove non-word,
-// non-whitespace, non-hyphen characters, replace whitespace, trim leading hyphens and trim trailing hyphens
+
 
 export const toSlug = (text: string): string =>
   text
@@ -64,7 +63,7 @@ export const round2 = (num: number) =>
 export const generateId = () =>
   Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)).join('')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export const formatError = (error: any): string => {
   if (error.name === 'ZodError') {
     const fieldErrors = Object.keys(error.errors).map((field) => {
@@ -95,8 +94,8 @@ export function calculateFutureDate(days: number) {
   return currentDate
 }
 export function getMonthName(yearAndMonth: string) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [year, monthNumber] = yearAndMonth.split('-')
+  
+  const [monthNumber] = yearAndMonth.split('-')
   const date = new Date()
   date.setMonth(parseInt(monthNumber) - 1)
   return new Date().getMonth() === parseInt(monthNumber) - 1
