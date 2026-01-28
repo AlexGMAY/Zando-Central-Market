@@ -58,7 +58,7 @@ const OrderDetailsPage = async (props: {
           </Link>
           <ChevronRight className="w-4 h-4" />
           <span className="text-slate-900 dark:text-white font-medium">
-            Order {formatId(order._id)}
+            Order {formatId(order._id.toString())}
           </span>
         </div>
 
@@ -70,7 +70,7 @@ const OrderDetailsPage = async (props: {
             </div>
             <div>
               <h1 className="text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-2">
-                Order {formatId(order._id)}
+                Order {formatId(order._id.toString())}
               </h1>
               <p className="text-slate-600 dark:text-slate-400 text-lg">
                 Order placed on {new Date(order.createdAt!).toLocaleDateString('en-US', { 

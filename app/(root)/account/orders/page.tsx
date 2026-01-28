@@ -143,7 +143,7 @@ const OrdersPage = async (props: {
                   )}
                   {orders.data.map((order: IOrder) => (
                     <TableRow 
-                      key={order._id} 
+                      key={order._id.toString()} 
                       className="border-b-slate-200/50 dark:border-b-slate-700/50 hover:bg-slate-50/50 dark:hover:bg-slate-700/20 transition-colors group"
                     >
                       <TableCell className="py-6">
@@ -153,7 +153,7 @@ const OrdersPage = async (props: {
                             className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                           >
                             <div className="font-semibold text-slate-900 dark:text-white">
-                              {formatId(order._id)}
+                              {formatId(order._id.toString())}
                             </div>
                           </Link>
                           <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
