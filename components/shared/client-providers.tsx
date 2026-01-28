@@ -17,7 +17,9 @@ export default function ClientProviders({
       {isCartSidebarOpen ? (
         <div className='flex min-h-screen'>
           <div className='flex-1 overflow-hidden'>{children}</div>
-          <CartSidebar />
+          <CartSidebar isOpen={false} onClose={function (): void {
+            throw new Error('Function not implemented.')
+          } } />
         </div>
       ) : (
         <div>{children}</div>
