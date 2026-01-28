@@ -46,9 +46,9 @@
 
 
 
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export async function POST(_req: NextRequest) {
+export async function POST() {
   return NextResponse.json({ 
     message: 'Stripe webhooks are disabled in this environment' 
   }, { status: 200 })
