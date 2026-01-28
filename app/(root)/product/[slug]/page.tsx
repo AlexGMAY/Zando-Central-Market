@@ -49,7 +49,7 @@ export default async function ProductDetails(props: {
 
   const relatedProducts = await getRelatedProductsByCategory({
     category: product.category,
-    productId: product._id,
+    productId: product._id.toString(),
     page: Number(page || '1'),
   })
 
@@ -57,7 +57,7 @@ export default async function ProductDetails(props: {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-xl">
-      <AddToBrowsingHistory id={product._id} category={product.category} />
+      <AddToBrowsingHistory id={product._id.toString()} category={product.category} />
       
       {/* Main Product Section */}
       <section className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -209,7 +209,7 @@ export default async function ProductDetails(props: {
                     <AddToCart
                       item={{
                         clientId: generateId(),
-                        product: product._id,
+                        product: product._id.toString(),
                         countInStock: product.countInStock,
                         name: product.name,
                         slug: product.slug,

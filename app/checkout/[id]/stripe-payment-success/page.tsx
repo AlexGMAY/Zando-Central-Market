@@ -91,7 +91,7 @@ export default async function SuccessPage(props: {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-slate-600 dark:text-slate-400">Order Number:</span>
-                        <span className="font-mono font-semibold">{order._id.slice(-8).toUpperCase()}</span>
+                        <span className="font-mono font-semibold">{order._id.toString().slice(-8).toUpperCase()}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-600 dark:text-slate-400">Order Date:</span>

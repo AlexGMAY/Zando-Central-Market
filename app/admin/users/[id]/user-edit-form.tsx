@@ -45,9 +45,11 @@ import { Separator } from '@/components/ui/separator'
 const UserEditForm = ({ user }: { user: IUser }) => {
   const router = useRouter()
 
-  const form = useForm<z.infer<typeof UserUpdateSchema>>({
+  type UserUpdateFormValues = z.infer<typeof UserUpdateSchema>
+
+  const form = useForm<UserUpdateFormValues>({
     resolver: zodResolver(UserUpdateSchema),
-    defaultValues: user,
+    defaultValues: user as unknown as UserUpdateFormValues,
     mode: 'onChange',
   })
 
@@ -57,7 +59,7 @@ const UserEditForm = ({ user }: { user: IUser }) => {
     try {
       const res = await updateUser({
         ...values,
-        _id: user._id,
+        _id: user._id.toString(),
       })
       
       if (!res.success) {

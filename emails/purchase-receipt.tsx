@@ -226,7 +226,7 @@ PurchaseReceiptEmail.PreviewProps = {
     paymentMethod: 'PayPal',
     expectedDeliveryDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 5 days from now
     isDelivered: false,
-  } as IOrder,
+  } as unknown as IOrder,
 } satisfies OrderInformationProps
 
 const dateFormatter = new Intl.DateTimeFormat('en', { 

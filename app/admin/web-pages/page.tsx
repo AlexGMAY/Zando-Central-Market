@@ -190,11 +190,11 @@ export default async function WebPageAdminPage() {
               <TableBody>
                 {webPages.map((webPage: IWebPage) => (
                   <TableRow 
-                    key={webPage._id} 
+                    key={webPage._id.toString()} 
                     className="border-b-slate-200/50 dark:border-b-slate-700/50 hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors group"
                   >
                     <TableCell className="font-mono text-xs text-slate-500 dark:text-slate-400">
-                      {formatId(webPage._id)}
+                      {formatId(webPage._id.toString())}
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-col">
@@ -228,7 +228,7 @@ export default async function WebPageAdminPage() {
                           </Button>
                         )}
                         <DeleteDialog 
-                          id={webPage._id} 
+                          id={webPage._id.toString()} 
                           action={deleteWebPage}
                           // trigger={
                           //   <Button variant="outline" size="sm" className="h-8 w-8 p-0">

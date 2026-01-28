@@ -210,11 +210,11 @@ export default async function AdminUser(props: {
               <TableBody>
                 {users?.data.map((user: IUser) => (
                   <TableRow 
-                    key={user._id} 
+                    key={user._id.toString()} 
                     className="border-b-slate-200/50 dark:border-b-slate-700/50 hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors group"
                   >
                     <TableCell className="font-mono text-xs text-slate-500 dark:text-slate-400">
-                      {formatId(user._id)}
+                      {formatId(user._id.toString())}
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-3">
@@ -241,7 +241,7 @@ export default async function AdminUser(props: {
                           </Link>
                         </Button>
                         <DeleteDialog 
-                          id={user._id} 
+                          id={user._id.toString()} 
                           action={deleteUser}
                           // trigger={
                           //   <Button variant="outline" size="sm" className="h-8 w-8 p-0">

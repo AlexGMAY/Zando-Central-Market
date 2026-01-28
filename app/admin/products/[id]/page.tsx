@@ -139,7 +139,7 @@ const UpdateProduct = async (props: UpdateProductProps) => {
                 <div>
                   <p className="font-semibold text-slate-800 dark:text-slate-300">Product ID</p>
                   <p className="text-slate-600 dark:text-slate-400 text-xs font-mono">
-                    {formatId(product._id)}
+                    {formatId(product._id.toString())}
                   </p>
                 </div>
               </div>
@@ -232,7 +232,7 @@ const UpdateProduct = async (props: UpdateProductProps) => {
             </p>
           </CardHeader>
           <CardContent className="p-8">
-            <ProductForm type="Update" product={product} productId={product._id} />
+            <ProductForm type="Update" product={product} productId={product._id.toString()} />
           </CardContent>
         </Card>
 

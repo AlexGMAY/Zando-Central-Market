@@ -124,7 +124,7 @@ export default async function UserEditPage(props: {
                 <div>
                   <p className="font-semibold text-slate-800 dark:text-slate-300">User ID</p>
                   <p className="text-slate-600 dark:text-slate-400 text-xs font-mono">
-                    {formatId(user._id)}
+                    {formatId(user._id.toString())}
                   </p>
                 </div>
               </div>

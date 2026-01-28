@@ -113,7 +113,7 @@ const UpdateWebPage = async (props: UpdateWebPageProps) => {
                 <div>
                   <p className="font-semibold text-slate-800 dark:text-slate-300">Page ID</p>
                   <p className="text-slate-600 dark:text-slate-400 text-xs font-mono">
-                    {formatId(webPage._id)}
+                    {formatId(webPage._id.toString())}
                   </p>
                 </div>
               </div>
@@ -231,7 +231,7 @@ const UpdateWebPage = async (props: UpdateWebPageProps) => {
             </p>
           </CardHeader>
           <CardContent className="p-8">
-            <WebPageForm type="Update" webPage={webPage} webPageId={webPage._id} />
+            <WebPageForm type="Update" webPage={webPage} webPageId={webPage._id.toString()} />
           </CardContent>
         </Card>
 

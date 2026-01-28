@@ -74,7 +74,7 @@ const AdminOrderDetailsPage = async (props: {
           </Link>
           <span>›</span>
           <span className="text-slate-900 dark:text-white font-medium">
-            Order {formatId(order._id)}
+            Order {formatId(order._id.toString())}
           </span>
         </nav>
 
@@ -123,7 +123,7 @@ const AdminOrderDetailsPage = async (props: {
                 <div>
                   <p className="font-semibold text-slate-800 dark:text-slate-300">Order ID</p>
                   <p className="text-slate-600 dark:text-slate-400 text-xs font-mono">
-                    {formatId(order._id)}
+                    {formatId(order._id.toString())}
                   </p>
                 </div>
               </div>

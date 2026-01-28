@@ -269,11 +269,11 @@ const ProductList = () => {
               <TableBody>
                 {data?.products.map((product: IProduct) => (
                   <TableRow 
-                    key={product._id} 
+                    key={product._id.toString()} 
                     className="border-b-slate-200/50 dark:border-b-slate-700/50 hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors group"
                   >
                     <TableCell className="font-mono text-xs text-slate-500 dark:text-slate-400">
-                      {formatId(product._id)}
+                      {formatId(product._id.toString())}
                     </TableCell>
                     <TableCell>
                       <Link 
@@ -330,7 +330,7 @@ const ProductList = () => {
                           </Link>
                         </Button>
                         <DeleteDialog
-                          id={product._id}
+                          id={product._id.toString()}
                           action={deleteProduct}
                           callbackAction={() => {
                             startTransition(async () => {

@@ -83,7 +83,7 @@ export default function OrderPaymentForm({
   }
 
   const handleCreatePayPalOrder = async () => {
-    const res = await createPayPalOrder(orderId)
+    const res = await createPayPalOrder(orderId.toString())
     if (!res.success) {
       toast({
         title: "Payment Error",
@@ -95,7 +95,7 @@ export default function OrderPaymentForm({
   }
 
   const handleApprovePayPalOrder = async (data: { orderID: string }) => {
-    const res = await approvePayPalOrder(orderId, data)
+    const res = await approvePayPalOrder(orderId.toString(), data)
     toast({
       title: res.success ? "Payment Successful" : "Payment Failed",
       description: res.message,
@@ -224,7 +224,7 @@ export default function OrderPaymentForm({
               >
                 <StripeForm
                   priceInCents={Math.round(order.totalPrice * 100)}
-                  orderId={orderId}
+                  orderId={orderId.toString()}
                 />
               </Elements>
             </div>
@@ -270,7 +270,7 @@ export default function OrderPaymentForm({
           Complete Your Order
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
-          Order #<span className="font-mono font-semibold">{orderId.slice(-8)}</span> • Please complete payment to confirm your order
+          Order #<span className="font-mono font-semibold">{orderId.toString().slice(-8)}</span> • Please complete payment to confirm your order
         </p>
       </div>
 
