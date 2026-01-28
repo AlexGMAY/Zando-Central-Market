@@ -215,7 +215,7 @@ export const ProfileForm = () => {
       toast({
         variant: 'destructive',
         title: 'Unexpected Error',
-        description: 'An unexpected error occurred. Please try again.',
+        description: 'An unexpected error occurred. Please try again.' + (error instanceof Error ? ` (${error.message})` : ''),
       })
     } finally {
       setIsVerifying(false)

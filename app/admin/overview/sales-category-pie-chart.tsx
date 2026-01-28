@@ -22,12 +22,25 @@ interface CustomLabelProps {
   index: number
 }
 
+interface TooltipPayload {
+  color: string;
+  payload: PieChartData;
+  value: number;
+  percent?: number;
+  [key: string]: unknown;
+}
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayload[];
+}
+
 const COLORS = [
   '#3b82f6', '#ef4444', '#10b981', '#f59e0b', 
   '#8b5cf6', '#ec4899', '#06b6d4', '#84cc16'
 ];
 
-const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: any[] }) => {
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
@@ -57,7 +70,8 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: any[] 
 
 export default function SalesCategoryPieChart({ data }: { data: PieChartData[] }) {
   const { theme } = useTheme()
-  const { cssColors } = useColorStore(theme)
+  useColorStore(theme) // Only destructure what you need
+ // Only destructure what you need
   const isDark = theme === 'dark'
 
   const RADIAN = Math.PI / 180
