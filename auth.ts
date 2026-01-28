@@ -53,7 +53,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           )
           if (isMatch) {
             return {
-              id: user._id,
+              id: user._id.toString(),
               name: user.name,
               email: user.email,
               role: user.role,
