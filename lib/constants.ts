@@ -8,10 +8,10 @@ export const APP_SLOGAN =
   process.env.NEXT_PUBLIC_APP_SLOGAN || 'Spend less, enjoy more.'
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
-  'An Amazon clone built with Next.js and MongoDB'
+  'Zando Central Market in Kinshasa, RDC offers a wide range of quality products at unbeatable prices. Shop with us for an exceptional online shopping experience.'
 export const APP_COPYRIGHT =
   process.env.NEXT_PUBLIC_APP_COPYRIGHT ||
-  `Copyright © 2025 ${APP_NAME}. All rights reserved.`
+  `Copyright © 2026 ${APP_NAME}. All rights reserved.`
 
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE || 9)
 
