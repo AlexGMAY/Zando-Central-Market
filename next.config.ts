@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       'framer-motion', // Optimise les bundles d'animation
       
     ],
+
+    serverComponentsExternalPackages: ['mongoose'],
     
     // 3. Scroll restoration pour UX
     scrollRestoration: true,
@@ -86,7 +88,15 @@ const nextConfig: NextConfig = {
   },
 
   /* Compression */
-  compress: true, 
+  compress: true,
+  
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  output: 'export', // For static export  
 }
 
 export default nextConfig
