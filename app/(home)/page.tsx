@@ -1,3 +1,6 @@
+
+export const dynamic = 'force-dynamic'
+
 import BrowsingHistoryList from '@/components/shared/browsing-history-list'
 import { HomeCard } from '@/components/shared/home/home-card'
 import { HomeCarousel } from '@/components/shared/home/home-carousel'
