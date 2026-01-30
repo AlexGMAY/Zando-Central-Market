@@ -95,8 +95,8 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  output: 'export', // For static export  
+  }
+    
 }
 
 export default nextConfig
