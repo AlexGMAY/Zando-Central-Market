@@ -164,26 +164,6 @@ export default async function Page() {
           </Card>
         </section>
       </div>
-
-      {/* Floating CTA Section */}
-      <section className="bg-gradient-to-r from-yellow-600 to-blue-600 shadow-2xl text-white py-16 mt-12 dark:from-blue-800 dark:to-red-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Ready to Discover More?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust us for quality products and exceptional service.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <button className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
-              Start Shopping
-            </button>
-            <button className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-200 transform hover:scale-105">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
