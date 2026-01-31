@@ -3,6 +3,7 @@
 import { ChevronUp, Building2, Phone, Mail, MapPin } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import { APP_NAME } from '@/lib/constants'
 import { useState, useEffect } from 'react'
 
@@ -95,8 +96,21 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1 xl:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <Building2 className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">{APP_NAME}</span>
+              <Link
+                            href="/"
+                            className="flex items-center gap-3 transition-transform hover:scale-[1.02]"
+                          >
+                            <Image
+                              src="/icons/logo.svg"
+                              width={36}
+                              height={36}
+                              alt={`${APP_NAME} logo`}
+                              className="h-9 w-9"
+                            />
+                            <span className="text-xl font-bold tracking-tight text-white">
+                              {APP_NAME}
+                            </span>
+                          </Link>
             </div>
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-start gap-3">
