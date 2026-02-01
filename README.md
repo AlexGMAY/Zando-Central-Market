@@ -13,7 +13,7 @@
 
 ## View Demo Website
 
-https://zandocd.vercel.app/
+https://zandokin.vercel.app/
 
 
 ## Contact Developer
